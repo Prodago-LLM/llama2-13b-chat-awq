@@ -1,5 +1,5 @@
 from transformers import AutoTokenizer
-from auto_gptq import AutoGPTQForCausalLM
+from awq import AutoAWQForCausalLM
 
 MODEL_NAME_OR_PATH = "TheBloke/Llama-2-13B-chat-AWQ"
 DEVICE = "cuda:0"
