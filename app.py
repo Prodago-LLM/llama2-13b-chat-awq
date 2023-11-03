@@ -43,7 +43,8 @@ def handler(context: dict, request: Request) -> Response:
 
     pipe = pipeline(
         "text-generation",
-        model=model,
+        # https://github.com/casper-hansen/AutoAWQ/issues/107
+        model=model.model,
         tokenizer=tokenizer,
         max_new_tokens=max_new_tokens,
         do_sample=True,
