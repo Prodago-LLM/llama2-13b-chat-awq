@@ -1,5 +1,5 @@
 from potassium import Potassium, Request, Response
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, pipeline
 from awq import AutoAWQForCausalLM
 
 MODEL_NAME_OR_PATH = "TheBloke/Llama-2-13B-chat-AWQ"
