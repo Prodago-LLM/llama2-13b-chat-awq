@@ -33,7 +33,7 @@ def handler(context: dict, request: Request) -> Response:
         max_tokens=max_new_tokens
     )
 
-    result = llm.generate_text(
+    result = llm.generate(
         prompt=prompt_template,
         sampling_params=sampling_params
     )
