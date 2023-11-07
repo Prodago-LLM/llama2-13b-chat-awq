@@ -33,12 +33,9 @@ def handler(context: dict, request: Request) -> Response:
         max_tokens=max_new_tokens
     )
 
-    result = llm.generate(
-        prompt=prompt_template,
-        sampling_params=sampling_params
-    )
+    result = llm.generate(prompt_template, sampling_params)[0].outputs[0].text
 
-    return Response(json={"outputs": result[0].outputs[0].text}, status=200)
+    return Response(json={"outputs": result}, status=200)
 
 
 if __name__ == "__main__":
